@@ -12,12 +12,13 @@
         <label asp-for="Employer">Employer</label>
         <select asp-for="Employer" asp-items="Model.Employers" />
         <span asp-validation-for="Employer"></span>
-        <p><a asp-controller="Employer" asp-action="Add">Add Employer</a></p>
     </div>
 
     @*@Html.LabelFor(x => x.Employer)
-    @Html.DropDownListFor(x => x.Employer.Name, Model.Employer)*@
+        @Html.DropDownListFor(x => x.Employer.Name, Model.Employer)*@
 
     <input type="submit" value="Add Job" />
 </form>
+
+<p><a asp-controller="Employer" asp-action="Add">Add Employer</a></p>
 
