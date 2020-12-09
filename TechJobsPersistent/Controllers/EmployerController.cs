@@ -29,7 +29,7 @@ namespace TechJobsPersistent.Controllers
             return View(employers);
         }
 
-        public IActionResult Add(AddEmployerViewModel addEmployerViewModel)
+        public IActionResult Add()
         {
             AddEmployerViewModel viewModel = new AddEmployerViewModel();
 
