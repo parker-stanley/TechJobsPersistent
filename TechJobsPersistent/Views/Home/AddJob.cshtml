@@ -4,20 +4,19 @@
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
-        <label>Name</label>
+        <label asp-for="Name">Job Name</label>
         <input class="form-control" asp-for="Name" />
         <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Employers">Name</label>
-        <select asp-for="Employers" asp-items="Model.Employers" />
-        <span asp-validation-for="Employers"></span>
+        <label asp-for="Employer">Employer</label>
+        <select asp-for="Employer" asp-items="Model.Employers" />
+        <span asp-validation-for="Employer"></span>
+        <p><a asp-controller="Employer" asp-action="Add">Add Employer</a></p>
     </div>
 
-    <p><a asp-controller="Employer" asp-action="Add">Add Employer</a></p>
-
     @*@Html.LabelFor(x => x.Employer)
-        @Html.DropDownListFor(x => x.Employer.Name, Model.Employer)*@
+    @Html.DropDownListFor(x => x.Employer.Name, Model.Employer)*@
 
     <input type="submit" value="Add Job" />
 </form>
