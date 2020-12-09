@@ -24,11 +24,13 @@ namespace TechJobsPersistent.ViewModels
 
             foreach (Employer employer in employers)
             {
-                Employers.Add(new SelectListItem
-                {
-                    Value = employer.Id.ToString(),
-                    Text = employer.Name
-                });
+                //Employers.Add(new SelectListItem
+                //{ 
+                //    Value = employer.Id.ToString(),
+                //    Text = employer.Name
+                //});
+
+                Employers.Add(new SelectListItem(employer.Name.ToString(), ((int)employer.Id).ToString()));
             }
         }
 
