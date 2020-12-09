@@ -9,9 +9,10 @@
         <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
-        <label>Name</label>
-        <selectc asp-for="Employer" />
+        <label asp-for="Employer">Name</label>
+        <select asp-for="Employer" />
         <span asp-validation-for="Employer"></span>
+        <a asp-controller="Employer" asp-action="Add">Add Employer</a>
     </div>
 
     @*@Html.LabelFor(x => x.Employer)
