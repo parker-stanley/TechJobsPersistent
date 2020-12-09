@@ -31,21 +31,29 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult Add()
         {
-            AddEmployerViewModel viewModel = new AddEmployerViewModel();
+            AddEmployerViewModel addEmployerViewModel = new AddEmployerViewModel();
 
-            return View(viewModel);
+            return View(addEmployerViewModel);
         }
 
-        public IActionResult ProcessAddEmployerForm(Employer employer)
+        public IActionResult ProcessAddEmployerForm(AddEmployerViewModel addEmployerViewModel)
         {
+
+
             if (ModelState.IsValid)
             {
+                Employer employer = new Employer
+                {
+                    Name = addEmployerViewModel.Name,
+                    Location = addEmployerViewModel.Location
+                };
+
                 context.Employers.Add(employer);
                 context.SaveChanges();
                 return Redirect("/Employer");
             }
 
-            return View("Add", employer);
+            return View("Add", addEmployerViewModel);
         }
 
         public IActionResult About(int id)
