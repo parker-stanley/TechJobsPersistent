@@ -13,6 +13,12 @@
         <select asp-for="Employer" asp-items="Model.Employers" />
         <span asp-validation-for="Employer"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="Skill">Skill</label>
+        <select asp-for="Skill" asp-items="Model.Skills" />
+        <span asp-validation-for="Skill"></span>
+    </div>
+
 
     <input type="submit" value="Add Job" />
 </form>
