@@ -74,7 +74,7 @@ namespace TechJobsPersistent.Controllers
                 return Redirect("/Home");
             }
 
-            return View("addJob", addJobViewModel);
+            return View("/Add", addJobViewModel);
         }
 
         public IActionResult Detail(int id)
