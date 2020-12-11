@@ -5,21 +5,21 @@
 SELECT COLUMN_NAME, DATA_TYPE 
 FROM INFORMATION_SCHEMA.COLUMNS 
 WHERE TABLE_SCHEMA = 'techjobs'
-AND TABLE_NAME = 'table_name';
+AND TABLE_NAME = 'Jobs';
 
 -- OR
 
-DESCRIBE mytable --placeholder
+DESCRIBE Jobs;
 
 --OR
 
-SHOW COLUMNS FROM techjobs.mytable --placeholder
+SHOW COLUMNS FROM techjobs.jobs;
 
 --Part 2
 
 SELECT Names
 FROM Employers
-WHERE Location == "St. Louis City";
+WHERE Location = "St. Louis City";
 
 --Part 3
 
@@ -28,6 +28,8 @@ and descriptions of all skills that are attached to jobs
 in alphabetical order.
 If a skill does not have a job listed, it should not be included in the results of this query.
 
-SELECT Name
+SELECT Name, Description
 FROM techjobs.Jobs
-INNER JOIN JobSkills ON Jobs.Id = JobSkills.Job.Id;
+INNER JOIN Skills ON Jobs.Id = JobSkills.Job.Id
+WHERE Job is not null
+ORDER BY Name DESC;
