@@ -6,11 +6,14 @@
 }
 else
 {
-    <h1>Employer: @Model[0].Name</h1>
+    @foreach (var employer in Model)
+    {
+        <h1>Employer: @employer.Name</h1>
 
-    <div>
-        <p>Name: @Model[0].Name</p>
-        <p>Location: @Model[0].Location</p>
-    </div>
+        <div>
+            <p>Name: @employer.Name</p>
+            <p>Location: @employer.Location</p>
+        </div>
+    }
 }
 
