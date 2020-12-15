@@ -60,8 +60,8 @@ namespace TechJobsPersistent.Controllers
         {
             List<Employer> employers = context.Employers
                 .Where(emp => emp.Id == id)
-                .Include(emp => emp.Name)
-                .Include(emp => emp.Location)
+                //.Include(emp => emp.Name)
+                //.Include(emp => emp.Location)
                 .ToList();
 
             return View(employers);

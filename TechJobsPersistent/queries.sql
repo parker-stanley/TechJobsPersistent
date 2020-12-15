@@ -33,3 +33,9 @@ FROM techjobs.Jobs
 INNER JOIN Skills ON Jobs.Id = JobSkills.Job.Id
 WHERE Job is not null
 ORDER BY Name DESC;
+
+-- this is better
+SELECT Name, Description
+FROM Skills
+INNER JOIN JobSkills ON Skills.Id = JobSkills.SkillId
+ORDER BY Name ASC;
